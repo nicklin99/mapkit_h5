@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽选坐标-高德地图vue组件化</title>
+</head>
+
+<body>
+    <!-- vue组件化，能看明白的建议使用这种 -->
+    <div id="app">
+        <amap></amap>
+    </div>
+    <style>
+        #app,
+        html,
+        #amap,
+        body {
+            height: 100%;
+            width: 100%;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        .result {
+            height: 20%;
+        }
+
+        #container {
+            height: 80%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="dist/picker_vue_async.js"></script>
+</body>
+
+</html>

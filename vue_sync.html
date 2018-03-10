@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽选坐标-vue结合html</title>
+    <style>
+        #app,
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+
+        .result {
+            height: 20%;
+        }
+
+        #container {
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- vue是渐进式框架，刚入门的使用这个更好理解 -->
+    <div id="app">
+        <div>
+            <input type="text" name="q" id="q" v-model="q">
+            <input type="button" value="搜索" @click="onSearch">
+        </div>
+        <div class="result">
+            <p>{{position}}</p>
+            <p>{{address}}</p>
+        </div>
+        <div id="container" ref="container">
+
+        </div>
+    </div>
+
+    <!-- src换成自己的vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <!-- 高德地图 jsapi uikit 同步加载 注意顺序先 jsapi 再 uikit 再 选址js代码-->
+    <script>
+        var key = ''
+    </script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=" +key+ "&plugin=AMap.ToolBar"></script>
+    <script src="http://webapi.amap.com/ui/1.0/main.js"></script>
+    <!-- 调用代码 -->
+    <script src="dist/picker_vue_sync.js"></script>
+</body>
+
+</html>
